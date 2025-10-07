@@ -21,7 +21,7 @@ constructor(){
 
 loadSearchGifs(searchTerm: string){
  
-    this.http.get<GiphyResponse>(`${environment.urlBase}/gifs/search`,{
+  this.http.get<GiphyResponse>(`${environment.urlBase}/gifs/search`,{
       params: {
         api_key: environment.apikey,
         q: searchTerm,

@@ -21,10 +21,10 @@ constructor(){
    
   loadTrendingGifs(){
 
-      // this.http.get('https://api.giphy.com/v1/gifs/trending?api_key=0dU3SqAi3Ofjixpww776MFkVeaUYfqre&limit=25');
+  // this.http.get('https://api.giphy.com/v1/meal/trending?api_key=0dU3SqAi3Ofjixpww776MFkVeaUYfqre&limit=25');
 
       
-      this.http.get<GiphyResponse>(`${environment.urlBase}/gifs/trending`,{
+  this.http.get<GiphyResponse>(`${environment.urlBase}/gifs/trending`,{
         params: {
           api_key: environment.apikey,
           limit: 40
