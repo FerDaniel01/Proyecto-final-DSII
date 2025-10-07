@@ -1,9 +1,9 @@
 export const environment = {
 
     production: true,
-    companyName: 'Meal Grupo 4',
+    companyName: 'Chef en casa ',
     companyName2: 'App',
-    companySlogan: 'RESTAURANTE',
+    companySlogan: 'Tu mejor opción para encontrar recetas',
 
     apikey: '0dU3SqAi3Ofjixpww776MFkVeaUYfqre',
     urlBase: 'https://api.giphy.com/v1',

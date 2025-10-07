@@ -20,13 +20,13 @@ export const routes: Routes = [
             },
             {
                 path: '**',
-                redirectTo: 'trending'
+                redirectTo: 'search-meal'
             },]
     },
 
 
     {
         path: '**',
-        redirectTo: 'dashboard'
+        redirectTo: 'search-meal'
     },
 ];

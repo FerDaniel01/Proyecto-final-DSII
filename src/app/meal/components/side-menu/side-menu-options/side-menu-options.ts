@@ -21,22 +21,22 @@ interface MenuOption {
 export class SideMenuOptions {
 
   menuOptions: MenuOption[]=[
-    {
-    label: 'Trending',
-    sublabel: 'Gifs populares',
-    icon: 'fa-solid fa-chart-line',
-    route: '/dashboard/trending'},
-     {
-    label: 'Search',
-    sublabel: 'Buscador Gifs',
-    icon: 'fa-solid fa-magnifying-glass',
-    route: '/dashboard/search'},
+    // {
+    // label: 'Trending',
+    // sublabel: 'Gifs populares',
+    // icon: 'fa-solid fa-chart-line',
+    // route: '/dashboard/trending'},
+    //  {
+    // label: 'Search',
+    // sublabel: 'Buscador Gifs',
+    // icon: 'fa-solid fa-magnifying-glass',
+    // route: '/dashboard/search'},
       {
     label: 'search-meal',
     sublabel: 'Buscador Comida',
     icon: 'fa-solid fa-magnifying-glass',
     route: '/dashboard/search-meal'},
-   
+
   ]
 
 }

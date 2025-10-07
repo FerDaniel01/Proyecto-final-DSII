@@ -19,7 +19,8 @@ export interface MealsResponse {
     meals: Meal[]
 } 
 export interface Meal {
-     strMeal: string;
+    idMeal: string;
+    strMeal: string;
     strCategory: string;
     strMealThumb: string;
     

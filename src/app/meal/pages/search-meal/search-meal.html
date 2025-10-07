@@ -1,9 +1,13 @@
 <div>
   <h2>Buscar Comida por Primera Letra</h2>
-  <input type="text" maxlength="1" (input)="mealByLetterService.loadMealsByFirstLetter($event.target.value)" placeholder="Ingresa la primera letra">
-  <div *ngFor="let meal of meals">
+  <input type="text" maxlength="20" (input)="mealByLetterService.loadMealsByFirstLetter($event.target.value)" placeholder="Ingresa la primera letra">
+
+   <h2>Buscar Comida nombre</h2>
+  <input type="text" maxlength="50" (input)="mealByNameService.loadMealsByName($event.target.value)" placeholder="ingresa el nombre de la comida">
+  <!-- <div *ngFor="let meal of meals">
     <h3>{{ meal.strMeal }}</h3>
     <p>{{ meal.strCategory }}</p>
     <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}">
-  </div>
+  </div> -->
+  <meal-list [meals]="meals"></meal-list>
 </div>

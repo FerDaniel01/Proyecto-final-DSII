@@ -1,0 +1,12 @@
+<div class="grid grid-cols-1 sm:grid grid-cols-2  md:grid-cols-3 gap-4">
+@for(meal of meals(); track meal.idMeal){
+    <meal-list-item 
+    [imageUrl]="meal.strMealThumb "
+     [idmeal]="meal.idMeal"
+       [nameMeal]="meal.strMeal"
+       [category]="meal.strCategory" />
+     
+ }
+  
+</div>
+
