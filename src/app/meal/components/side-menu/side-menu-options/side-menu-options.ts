@@ -31,6 +31,11 @@ export class SideMenuOptions {
     sublabel: 'Buscador Gifs',
     icon: 'fa-solid fa-magnifying-glass',
     route: '/dashboard/search'},
+      {
+    label: 'search-meal',
+    sublabel: 'Buscador Comida',
+    icon: 'fa-solid fa-magnifying-glass',
+    route: '/dashboard/search-meal'},
    
   ]
 

@@ -1,1 +1,9 @@
-<p>search-meal works!</p>
+<div>
+  <h2>Buscar Comida por Primera Letra</h2>
+  <input type="text" (input)="getMealsByFirstLetter($event.target.value)" placeholder="Ingresa la primera letra">
+  <div *ngFor="let meal of meals">
+    <h3>{{ meal.strMeal }}</h3>
+    <p>{{ meal.strCategory }}</p>
+    <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}">
+  </div>
+</div>
