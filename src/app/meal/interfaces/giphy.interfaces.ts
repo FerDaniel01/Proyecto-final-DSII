@@ -15,3 +15,12 @@ export interface GiphyItemImage {
 export interface GiphyItemImageOriginal {
     url: string
 }
+export interface MealsResponse {
+    meals: Meal[]
+} 
+export interface Meal {
+     strMeal: string;
+    strCategory: string;
+    strMealThumb: string;
+    
+}

@@ -3,3 +3,11 @@ export interface Gif {
     title: string;
     url: string;
 }
+
+
+export interface Meal {
+     strMeal: string;
+    strCategory: string;
+    strMealThumb: string;
+    
+}
