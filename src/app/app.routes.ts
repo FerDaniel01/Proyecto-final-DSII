@@ -9,15 +9,15 @@ export const routes: Routes = [
             {
                 path: 'search-meal',
                 loadComponent: () => import('./meal/pages/search-meal/search-meal')
-            },
-            {
-                path: 'trending',
-                loadComponent: () => import('./meal/pages/trending-page/trending-page')
-            },
-            {
-                path: 'search',
-                loadComponent: () => import('./meal/pages/search-page/search-page')
-            },
+             },
+            // {
+            //     path: 'trending',
+            //     loadComponent: () => import('./meal/pages/trending-page/trending-page')
+            // },
+            // {
+            //     path: 'search',
+            //     loadComponent: () => import('./meal/pages/search-page/search-page')
+            // },
             {
                 path: '**',
                 redirectTo: 'search-meal'
@@ -27,6 +27,6 @@ export const routes: Routes = [
 
     {
         path: '**',
-        redirectTo: 'search-meal'
+        redirectTo: 'dashboard/search-meal'
     },
 ];
