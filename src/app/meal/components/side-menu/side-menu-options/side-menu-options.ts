@@ -32,10 +32,15 @@ export class SideMenuOptions {
     // icon: 'fa-solid fa-magnifying-glass',
     // route: '/dashboard/search'},
       {
-    label: 'search-meal',
+    label: 'Buscar comida',
     sublabel: 'Buscador Comida',
     icon: 'fa-solid fa-magnifying-glass',
     route: '/dashboard/search-meal'},
+          {
+    label: 'Buscar categoria',
+    sublabel: 'Buscador categorias',
+    icon: 'fa-solid fa-magnifying-glass',
+    route: '/dashboard/search-meal'},// falta agregar ruta del page y en routes tambien
 
   ]
 

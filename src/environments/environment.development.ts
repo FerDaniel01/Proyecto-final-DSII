@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    companyName: 'Chef en casa ',
+    companyName: 'Chef en casa',
     companyName2: 'App',
     companySlogan: 'Tu mejor opción para encontrar recetas',
 
