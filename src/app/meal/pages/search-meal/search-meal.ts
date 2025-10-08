@@ -18,8 +18,9 @@ export default class SearchMeal  {
   meals: Meal[] = [];
   mealByLetterService = inject(MealByLetterService)
   mealByNameService = inject(MealByNameServices)
- 
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     constructor() {
+    
     // Efecto para actualizar meals cuando cambie el signal
     effect(() => {
       this.meals = this.mealByLetterService.searchedMeals();
