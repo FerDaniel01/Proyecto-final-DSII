@@ -13,12 +13,10 @@ import { ShoppingCartService } from 'src/app/meal/services/shopping-cart';
 })
 export class MealListItem {
   producto = input.required<any>();
+  // ...existing code...
   cartService = inject(ShoppingCartService);
   agregarProducto(producto: any) {
     this.cartService.addToCart(producto);
     console.log('Productos en el carrito:', this.cartService.cartItems());
-  
-}
-
-
+  }
 }

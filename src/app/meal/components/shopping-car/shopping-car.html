@@ -7,7 +7,7 @@
           
         </div> -->
 
-        <div class="fixed right-0 top-0 w-80 h-full bg-gray-900 text-white shadow-2xl p-4 overflow-y-auto">
+<div class="fixed right-0 top-0 w-80 h-full bg-gray-900 text-white shadow-2xl p-4 overflow-y-auto">
   <h2 class="text-xl font-bold mb-4">Carrito</h2>
  @for(meal of cartService.cartItems(); track meal.idMeal || meal.idDrink){
   <meal-list-item [producto]="meal" />

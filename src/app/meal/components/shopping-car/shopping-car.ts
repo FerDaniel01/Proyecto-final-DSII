@@ -6,11 +6,11 @@ import { MealListItem } from '../meal-list/meal-list-item/meal-list-item';
 
 @Component({
   selector: 'app-shoping-car',
+  standalone: true,
   imports: [ MealListItem],
   templateUrl: './shopping-car.html',
   styles: ``
 })
 export class ShoppingCar {
   cartService = inject(ShoppingCartService);
-
 }

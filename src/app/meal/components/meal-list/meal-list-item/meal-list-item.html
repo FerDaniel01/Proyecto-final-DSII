@@ -11,9 +11,9 @@
  <!-- <counter-component [producto]="producto()"/> -->
 <div>
   <img class="h-auto max-w-full rounded-lg" [src]="producto().strMealThumb || producto().strDrinkThumb" alt="{{ producto().strMeal || producto().strDrink }}">
-  <p class="text-center mt-2 text-white font-bold">ID: {{ producto().idMeal || producto().idDrink || '---' }}</p>
-  <p class="text-center mt-2 font-bold text-white">Nombre: {{ producto().strMeal || producto().strDrink || '---' }}</p>
-  <p class="text-center mt-2 font-bold text-white">Categoría: {{ producto().strCategory || producto().strAlcoholic || '---' }}</p>
-  <p class="text-center mt-2 font-bold text-white">Precio: ${{ producto().idMeal || '---' }}</p>
+  <p class="text-center mt-2 text-white font-bold text-xs">ID: {{ producto().idMeal || producto().idDrink || '---' }}</p>
+  <p class="text-center mt-2 font-bold text-white text-xs">Nombre: {{ producto().strMeal || producto().strDrink || '---' }}</p>
+  <p class="text-center mt-2 font-bold text-white text-xs">Categoría: {{ producto().strCategory || producto().strAlcoholic || '---' }}</p>
+  <p class="text-center mt-2 font-bold text-white text-xs">Precio: ${{ producto().idMeal || '---' }}</p>
   <counter-component [producto]="producto()"></counter-component>
 </div>

@@ -10,6 +10,10 @@ export const routes: Routes = [
                 path: 'search-meal',
                 loadComponent: () => import('./meal/pages/search-meal/search-meal')
              },
+            {
+                path: 'search-category',
+                loadComponent: () => import('./meal/pages/search-category/search-category')
+            },
             // {
             //     path: 'trending',
             //     loadComponent: () => import('./meal/pages/trending-page/trending-page')
