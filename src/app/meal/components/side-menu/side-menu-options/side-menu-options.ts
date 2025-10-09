@@ -41,6 +41,11 @@ export class SideMenuOptions {
     sublabel: 'Buscador categorias',
     icon: 'fa-solid fa-magnifying-glass',
     route: '/dashboard/search-category'},
+        {
+    label: 'Buscar Bebida',
+    sublabel: 'Buscador Bebidas',
+    icon: 'fa-solid fa-magnifying-glass',
+    route: '/dashboard/search-drink'},
 
   ]
 

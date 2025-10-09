@@ -29,8 +29,8 @@ export class MealByLetterService {
   }
     
     loadDRinksByFirstLetter(firstLetter: string) {
-    
-    this.http.get<DrinksResponse>(`${environment.urlBase3}${firstLetter}`, {}).subscribe((response) => {
+      console.log('La letra es   ',firstLetter);
+    this.http.get<DrinksResponse>(`${environment.urlBase4}${firstLetter}`, {}).subscribe((response) => {
 
       console.log(response.drinks??[]);
       this.searchedDrinks.set(response.drinks??[]);

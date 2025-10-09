@@ -1,0 +1,22 @@
+<div class="max-w-3xl mx-auto bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-2xl p-8 border-4 border-yellow-700 mt-8 mr-80">
+  <h2 class="text-3xl font-serif font-extrabold text-yellow-500 mb-4 text-center drop-shadow-lg uppercase tracking-wider">Buscar Bebida por Primera Letra</h2>
+  <div class="flex flex-col md:flex-row items-center gap-4 mb-6">
+    <input type="text" maxlength="1" class="w-24 px-4 py-2 rounded-lg border-2 border-yellow-500 bg-gray-800 text-yellow-200 text-xl font-mono focus:outline-none focus:ring-2 focus:ring-yellow-400" (input)="drinkByLetterService.loadDRinksByFirstLetter($event.target.value)" placeholder="Letra">
+    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+      @for(letter of alphabet; track letter){
+        <button type="button" class="bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-all duration-150 font-serif text-lg tracking-wider" (click)="drinkByLetterService.loadDRinksByFirstLetter(letter)">{{letter}}</button>
+      }
+    </div>
+  </div>
+  <!-- <h2 class="text-2xl font-serif font-bold text-yellow-400 mb-2 mt-8 text-center">Buscar Comida por Nombre</h2>
+  <div class="flex flex-col md:flex-row items-center gap-4 mb-8">
+    <input type="text" maxlength="50" class="w-full md:w-1/2 px-4 py-2 rounded-lg border-2 border-yellow-500 bg-gray-800 text-yellow-200 text-lg font-mono focus:outline-none focus:ring-2 focus:ring-yellow-400" (input)="mealByNameService.loadMealsByName($event.target.value)" placeholder="Ingresa el nombre de la comida">
+    
+  </div> -->
+  <div class="mt-6">
+    <meal-list [meals]="meals"></meal-list>
+  </div>
+</div>  
+
+
+

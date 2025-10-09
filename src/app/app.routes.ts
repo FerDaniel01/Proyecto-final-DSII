@@ -14,8 +14,13 @@ export const routes: Routes = [
                 path: 'search-category',
                 loadComponent: () => import('./meal/pages/search-category/search-category')
             },
+               {
+                path: 'search-drink',
+                loadComponent: () => import('./meal/pages/search-drink/search-drink')
+            },
+         
             // {
-            //     path: 'trending',
+            //     path: '/dashboard/search-drink',
             //     loadComponent: () => import('./meal/pages/trending-page/trending-page')
             // },
             // {
@@ -25,7 +30,8 @@ export const routes: Routes = [
             {
                 path: '**',
                 redirectTo: 'search-meal'
-            },]
+            },
+        ]
     },
 
 
