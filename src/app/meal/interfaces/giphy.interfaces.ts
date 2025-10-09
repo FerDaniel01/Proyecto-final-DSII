@@ -15,10 +15,10 @@ export interface GiphyItemImage {
 export interface GiphyItemImageOriginal {
     url: string
 }
-export interface MealsResponse {
+export interface MealsResponse {// comidas que responde la api
     meals: Meal[]
 } 
-export interface Meal {
+export interface Meal {// comida individual que responde la api
     idMeal: string;
     strMeal: string;
     strCategory: string;

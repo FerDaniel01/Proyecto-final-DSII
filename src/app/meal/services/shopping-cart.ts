@@ -39,6 +39,9 @@ export class ShoppingCartService {
   private saveToLocalStorage() {
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems()));
   }
+  totalPrice(): number {
+  return this.cartItems().reduce((total, item) => total + (item.price || 0) * (item.cantidad || 1), 0);
+}
 
   removeOneFromCart(producto: any) {
   const items = this.cartItems();

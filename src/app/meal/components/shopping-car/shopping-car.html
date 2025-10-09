@@ -9,10 +9,12 @@
 
 <div class="fixed right-0 top-0 w-80 h-full bg-gray-900 text-white shadow-2xl p-4 overflow-y-auto">
   <h2 class="text-xl font-bold mb-4">Carrito</h2>
- @for(meal of cartService.cartItems(); track meal.idMeal || meal.idDrink){
+ @for(meal of cartService.cartItems(); track meal.id|| meal.id){
   <meal-list-item [producto]="meal" />
-  <span class="text-yellow-400">Cantidad: {{ meal.cantidad }}</span>
-  <hr class="my-2 border-yellow-600">
+  <span class="text-yellow-400">Cantidad: {{ meal.cantidad }} x ${{ meal.price }} = ${{ meal.price * meal.cantidad }}</span>
+ 
 }
+ <h2 class="text-white font-bold"> Total: ${{ cartService.totalPrice() }}</h2>
+  <hr class="my-2 border-yellow-600">
   <button (click)="cartService.clearCart()" class="mt-4 bg-yellow-600 px-4 py-2 rounded">Vaciar carrito</button>
 </div>
