@@ -11,7 +11,7 @@ import { MealMapper } from '../../mapper/meal.mapper';
   templateUrl: './meal-list.html',
   styles: ``
 })
-export class GifList {
+export class MealList {
 
   meals= input.required<MealProduct[]>();
 

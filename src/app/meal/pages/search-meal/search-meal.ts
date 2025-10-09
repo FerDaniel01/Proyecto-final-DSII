@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 import { Meal, MealProduct } from '../../interfaces/giphy.interfaces';
 import { MealByLetterService } from '../../services/meal-by-letter.services';
 
-import { GifList } from "../../components/meal-list/meal-list";
+import {  MealList } from "../../components/meal-list/meal-list";
 import { MealByNameServices } from '../../services/meal-by-name.services';
 import { MealMapper } from '../../mapper/meal.mapper';
 
 @Component({
   selector: 'app-search-meal',
-  imports: [CommonModule, ReactiveFormsModule,  GifList],
+  imports: [CommonModule, ReactiveFormsModule,  MealList],
   templateUrl: './search-meal.html',
   styles: ``
 })
@@ -24,7 +24,7 @@ export default class SearchMeal  {
     
     // Efecto para actualizar meals cuando cambie el signal
     effect(() => {
-     this.meals = this.mealByLetterService.searchedMeals() as MealProduct[];
+    this.meals = this.mealByLetterService.searchedMeals() as MealProduct[];
     });
       effect(() => {
     this.meals = this.mealByNameService.searchedMeals() ;
