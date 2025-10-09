@@ -9,12 +9,13 @@ export class MealMapper {
     name: item.strMeal,
     imageUrl: item.strMealThumb,
     category: item.strCategory,
-    price: (Number(item.idMeal)-50000) // Precio fijo o puedes implementar una lógica para asignar precios
+    price: Math.round(Number(item.idMeal.slice(-2))) *1000// Precio fijo o puedes implementar una lógica para asignar precios
 }
 } 
 // static mapGiphyItemsToGifArray(items: GiphyItem[] ): Gif[] {
 // return items.map(this.mapGiphyItemToGif);
 // }
+// cadena.slice(-2)
 
 static mapMealsToMealProducts(meals: Meal[]): MealProduct[] {
     return meals.map(this.mapMealToMealProduct);
