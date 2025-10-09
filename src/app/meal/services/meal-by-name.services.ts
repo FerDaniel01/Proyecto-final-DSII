@@ -1,20 +1,24 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { Meal, MealsResponse } from '../interfaces/giphy.interfaces';
+import { Meal, MealProduct, MealsResponse } from '../interfaces/giphy.interfaces';
 import { HttpClient } from '@angular/common/http';
+import { MealMapper } from '../mapper/meal.mapper';
+import { environment } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MealByNameServices {
   private http= inject(HttpClient);
-  searchedMeals=signal<Meal[]>([])
+  //searchedMeals=signal<Meal[]>([])
+    searchedMeals=signal<MealProduct[]>([])
 
   constructor(){}
 
   loadMealsByName(name: string) {
-    this.http.get<MealsResponse>(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`, {}).subscribe((response) => {
-      console.log(response.meals??[]);
-      this.searchedMeals.set(response.meals??[]);
+    this.http.get<MealsResponse>(`${environment.urlBase2}${name}`, {}).subscribe((response) => {
+    const meals = MealMapper.mapMealsToMealProducts(response.meals)
+          console.log(meals);
+          this.searchedMeals.set(meals);
     });
   }
   

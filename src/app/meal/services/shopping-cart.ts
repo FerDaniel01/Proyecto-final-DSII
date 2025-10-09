@@ -13,8 +13,8 @@ export class ShoppingCartService {
 
   addToCart(producto: any) {
       const items = this.cartItems();// obtiene los items actuales
-     const id = producto.idMeal || producto.idDrink;//busca id del producto
-     const idx = items.findIndex(item => (item.idMeal || item.idDrink) === id);// busca si ya existe en el carrito
+     const id = producto.id || producto.id;//busca id del producto
+     const idx = items.findIndex(item => (item.id || item.id) === id);// busca si ya existe en el carrito
  if (idx > -1) {
     // Ya existe, incrementa cantidad
     items[idx].cantidad = (items[idx].cantidad || 1) + 1;
@@ -27,7 +27,7 @@ export class ShoppingCartService {
   }
 
   removeFromCart(id: string) {
-    this.cartItems.set(this.cartItems().filter(item => item.idMeal !== id && item.idDrink !== id));
+    this.cartItems.set(this.cartItems().filter(item => item.id !== id && item.id !== id));
     this.saveToLocalStorage();
   }
 
@@ -42,8 +42,8 @@ export class ShoppingCartService {
 
   removeOneFromCart(producto: any) {
   const items = this.cartItems();
-  const id = producto.idMeal || producto.idDrink;
-  const idx = items.findIndex(item => (item.idMeal || item.idDrink) === id);
+  const id = producto.id || producto.id;
+  const idx = items.findIndex(item => (item.id || item.id) === id);
 
   if (idx > -1) {
     if (items[idx].cantidad > 1) {

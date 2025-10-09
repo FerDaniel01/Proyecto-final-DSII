@@ -1,20 +1,20 @@
-// export interface GiphyResponse { 
-//     data: GiphyItem[]
-// }
+export interface GiphyResponse { 
+    data: GiphyItem[]
+}
 
-// export interface GiphyItem {
-//     id: string;
-//     title:string; 
-//     images: GiphyItemImage
-// }
+export interface GiphyItem {
+    id: string;
+    title:string; 
+    images: GiphyItemImage
+}
 
-// export interface GiphyItemImage {
-//     original: GiphyItemImageOriginal
-// }
+export interface GiphyItemImage {
+    original: GiphyItemImageOriginal
+}
 
-// export interface GiphyItemImageOriginal {
-//     url: string
-// }
+export interface GiphyItemImageOriginal {
+    url: string
+}
 export interface MealsResponse {
     meals: Meal[]
 } 
@@ -34,4 +34,12 @@ export interface Drink {
     strCategory: string;
     strDrinkThumb: string;
     
+}
+
+export interface MealProduct {
+    id: string;
+    name: string;
+    category: string;
+    price: number;
+    imageUrl: string;
 }

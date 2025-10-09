@@ -12,8 +12,8 @@ export class Counter {
   cartService = inject(ShoppingCartService);
 
   get cantidad() {
-    const id = this.producto().idMeal || this.producto().idDrink;
-    const item = this.cartService.cartItems().find(i => (i.idMeal || i.idDrink) === id);
+    const id = this.producto().id || this.producto().id;
+    const item = this.cartService.cartItems().find(i => (i.id || i.id) === id);
     return item?.cantidad || 0;
   }
 

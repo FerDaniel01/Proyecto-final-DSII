@@ -1,11 +1,12 @@
 import { Component, computed, effect, inject } from '@angular/core';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Meal } from '../../interfaces/giphy.interfaces';
+import { Meal, MealProduct } from '../../interfaces/giphy.interfaces';
 import { MealByLetterService } from '../../services/meal-by-letter.services';
 
 import { GifList } from "../../components/meal-list/meal-list";
 import { MealByNameServices } from '../../services/meal-by-name.services';
+import { MealMapper } from '../../mapper/meal.mapper';
 
 @Component({
   selector: 'app-search-meal',
@@ -15,7 +16,7 @@ import { MealByNameServices } from '../../services/meal-by-name.services';
 })
 export default class SearchMeal  {
 
-  meals: Meal[] = [];
+  meals: MealProduct[] = [];
   mealByLetterService = inject(MealByLetterService)
   mealByNameService = inject(MealByNameServices)
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -23,10 +24,10 @@ export default class SearchMeal  {
     
     // Efecto para actualizar meals cuando cambie el signal
     effect(() => {
-      this.meals = this.mealByLetterService.searchedMeals();
+     this.meals = this.mealByLetterService.searchedMeals() as MealProduct[];
     });
       effect(() => {
-      this.meals = this.mealByNameService.searchedMeals();
+    this.meals = this.mealByNameService.searchedMeals() ;
     });
   }
 }
