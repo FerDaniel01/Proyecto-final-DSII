@@ -25,6 +25,16 @@ export interface Meal {
     strMealThumb: string;
     
 }
+
+export interface CategoryResponse{
+    meals: CategoryMeal[] 
+}
+
+export interface CategoryMeal{
+    strCategory: string;
+}
+
+
 export interface DrinksResponse {
     drinks: Drink[]
 } 

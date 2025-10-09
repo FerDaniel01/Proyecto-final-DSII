@@ -40,7 +40,7 @@ export class SideMenuOptions {
     label: 'Buscar categoria',
     sublabel: 'Buscador categorias',
     icon: 'fa-solid fa-magnifying-glass',
-    route: '/dashboard/search-meal'},// falta agregar ruta del page y en routes tambien
+    route: '/dashboard/search-category'},
 
   ]
 
