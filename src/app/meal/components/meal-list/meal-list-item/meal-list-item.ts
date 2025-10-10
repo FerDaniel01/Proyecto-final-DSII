@@ -3,6 +3,7 @@ import { count } from 'rxjs';
 import { Meal } from 'src/app/meal/interfaces/giphy.interfaces';
 import { Counter } from '../../counter/counter';
 import { ShoppingCartService } from 'src/app/meal/services/shopping-cart';
+import { MealByCategoryService } from 'src/app/meal/services/meal-by-category.services';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class MealListItem {
   producto = input.required<any>();
  
   cartService = inject(ShoppingCartService);
+  loadedCategory = inject(MealByCategoryService).loadedCategory;
   agregarProducto(producto: any) {
     this.cartService.addToCart(producto);
     console.log('Productos en el carrito:', this.cartService.cartItems());

@@ -15,6 +15,7 @@ export class MealByCategoryService {
   private http= inject(HttpClient);
   categories=signal<MealCategory[]>([])
   mealsByCategory = signal<MealProduct[]>([]);
+  loadedCategory = signal<string>('');
   // metodo para cargar las categorias
   loadCategories(category: string) {
     
@@ -44,11 +45,14 @@ export class MealByCategoryService {
   //   });
   // }
   
+
   loadMealsByCategory(category: string) {
-      this.http.get<MealsResponse>(`${environment.urlBase3}${category}`, {}).subscribe((response) => {
+    console.log('Cargando platos para la categoría:', category);
+      this.http.get<MealsResponse>(`${environment.urlBase6}${category}`, {}).subscribe((response) => {
       const meals = MealMapper.mapMealsToMealProducts(response.meals)
-            console.log(meals);
+            console.log('platos por categorias',meals);
             this.mealsByCategory.set(meals);
+            this.loadedCategory.set(category);
       });
     }
 

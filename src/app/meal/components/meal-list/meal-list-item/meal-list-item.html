@@ -10,10 +10,10 @@
 </div> -->
  <!-- <counter-component [producto]="producto()"/> -->
 <div>
-  <img class="h-auto max-w-full rounded-lg" [src]="producto().imageUrl || producto().imageUrl" alt="{{ producto().name || producto().name }}">
-  <p class="text-center mt-2 text-white font-bold">ID: {{ producto().id || producto().id || '---' }}</p>
-  <p class="text-center mt-2 font-bold text-white">Nombre: {{ producto().name || producto().name || '---' }}</p>
-  <p class="text-center mt-2 font-bold text-white">Categoría: {{ producto().category || producto().category || '---' }}</p>
+  <img class="h-auto max-w-full rounded-lg" [src]="producto().imageUrl" alt="{{ producto().name  }}">
+  <p class="text-center mt-2 text-white font-bold">ID: {{ producto().id  || '---' }}</p>
+  <p class="text-center mt-2 font-bold text-white">Nombre: {{ producto().name || '---' }}</p>
+  <p class="text-center mt-2 font-bold text-white">Categoría: {{ producto().category  || loadedCategory()}}</p>
   <p class="text-center mt-2 font-bold text-white">Precio: ${{ producto().price || '---' }}</p>
   <counter-component [producto]="producto()"></counter-component>
 </div>
