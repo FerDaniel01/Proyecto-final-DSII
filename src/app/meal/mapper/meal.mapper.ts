@@ -1,4 +1,4 @@
-import { MealProduct, Meal, CategoryMeal, MealCategory } from "../interfaces/giphy.interfaces";
+import { MealProduct, Meal, CategoryMeal, MealCategory } from "../interfaces/interfaces";
 //import { GiphyItem } from "../interfaces/giphy.interfaces";
 
 export class MealMapper {

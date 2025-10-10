@@ -1,6 +1,6 @@
 import { Component, effect, inject, input, signal } from '@angular/core';
 import { count } from 'rxjs';
-import { Meal } from 'src/app/meal/interfaces/giphy.interfaces';
+import { Meal } from 'src/app/meal/interfaces/interfaces';
 import { Counter } from '../../counter/counter';
 import { ShoppingCartService } from 'src/app/meal/services/shopping-cart';
 import { MealByCategoryService } from 'src/app/meal/services/meal-by-category.services';

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
-import { DrinksResponse, MealProduct } from '../interfaces/giphy.interfaces';
+import { DrinksResponse, MealProduct } from '../interfaces/interfaces';
 import { environment } from '@environments/environment';
 import { MealMapper } from '../mapper/drink.mapper';
 

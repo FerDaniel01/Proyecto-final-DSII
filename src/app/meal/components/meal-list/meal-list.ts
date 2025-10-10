@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 
 
-import { Meal, MealProduct } from '../../interfaces/giphy.interfaces';
+import { Meal, MealProduct } from '../../interfaces/interfaces';
 import { MealListItem } from './meal-list-item/meal-list-item';
 
 @Component({

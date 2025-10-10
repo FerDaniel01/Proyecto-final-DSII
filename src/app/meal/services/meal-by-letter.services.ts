@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { MealsResponse,Meal, DrinksResponse, Drink, MealProduct  } from '../interfaces/giphy.interfaces';
+import { MealsResponse,Meal, DrinksResponse, Drink, MealProduct  } from '../interfaces/interfaces';
 import { environment } from '@environments/environment';
 import { MealMapper } from '../mapper/meal.mapper';
 

@@ -1,7 +1,7 @@
 import { Component, computed, effect, inject } from '@angular/core';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Meal, MealProduct } from '../../interfaces/giphy.interfaces';
+import { Meal, MealProduct } from '../../interfaces/interfaces';
 import { MealByLetterService } from '../../services/meal-by-letter.services';
 
 import {  MealList } from "../../components/meal-list/meal-list";

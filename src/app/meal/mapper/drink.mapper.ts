@@ -1,5 +1,5 @@
 
-import { MealProduct, Meal, Drink } from "../interfaces/giphy.interfaces";
+import { MealProduct, Meal, Drink } from "../interfaces/interfaces";
 //import { GiphyItem } from "../interfaces/giphy.interfaces";
 
 export class MealMapper {
