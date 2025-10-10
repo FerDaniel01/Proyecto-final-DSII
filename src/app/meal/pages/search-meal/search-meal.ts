@@ -22,7 +22,7 @@ export default class SearchMeal  {
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     constructor() {
     
-    // Efecto para actualizar meals cuando cambie el signal
+    
     effect(() => {
     this.meals = this.mealByLetterService.searchedMeals() as MealProduct[];
     });
