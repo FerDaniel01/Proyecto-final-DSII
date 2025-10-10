@@ -7,5 +7,7 @@ export const environment = {
 
     urlBase2: 'https://www.themealdb.com/api/json/v1/1/search.php?f=',
     urlBase3: 'https://www.themealdb.com/api/json/v1/1/search.php?s=',
-    urlBase4: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='
+    urlBase4: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=',
+    urlBase5: 'https://www.themealdb.com/api/json/v1/1/list.php?c=',
+    urlBase6: 'hhttps://www.themealdb.com/api/json/v1/1/filter.php?c=',
 };

@@ -25,7 +25,7 @@ export interface Meal {// comida individual que responde la api
     strMealThumb: string;
     
 }
-
+ // categorias que responde la api
 export interface CategoryResponse{
     meals: CategoryMeal[] 
 }
@@ -52,4 +52,8 @@ export interface MealProduct {
     category: string;
     price: number;
     imageUrl: string;
+}
+
+export interface MealCategory {
+    category: string;
 }

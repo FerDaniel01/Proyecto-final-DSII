@@ -1,26 +1,60 @@
 import { Injectable, inject, signal } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { MealCategoryMapper, MealMapper } from "../mapper/meal.mapper";
+import { Meal, CategoryMeal, CategoryResponse, MealCategory, MealProduct, MealsResponse } from "../interfaces/giphy.interfaces";
+import { environment } from "@environments/environment";
 
-import { Meal, CategoryMeal, CategoryResponse } from "../interfaces/giphy.interfaces";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class MealByCategoryService {
+  
   //peticion HTTP para obtener las categorias
   private http= inject(HttpClient);
-  categories=signal<CategoryMeal[]>([])
+  categories=signal<MealCategory[]>([])
+  mealsByCategory = signal<MealProduct[]>([]);
+  // metodo para cargar las categorias
+  loadCategories(category: string) {
+    
+    this.http.get<CategoryResponse>(`${environment.urlBase5}${category}`, {}).subscribe((response) => {
+      const categoriesmeals = MealCategoryMapper.mapCategoryMealsToMealCategories(response.meals);
+      this.categories.set(categoriesmeals);
 
-  // metodo para realizar peticion a la API y obtener las categorias
-  loadcategories(){
-    this.http.get<CategoryResponse>('https://www.themealdb.com/api/json/v1/1/list.php?c=list').subscribe((response)=>{
-      console.log(response.meals);
-      this.categories.set(response.meals);
+      
     });
   }
 
+  // método para cargar platos por categoría
+  // loadMealsByCategory(category: string) {
+  //   this.http.get<any>(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`, {}).subscribe((response) => {
+  //     console.log('Categoría solicitada:', category);
+  //     console.log('Respuesta de la API:', response.meals);
+  //     this.mealsByCategory.set(response.meals);
+  //     const meals = response.meals ? response.meals.map((meal: any) => ({
+  //       id: meal.idMeal,
+  //       name: meal.strMeal,
+  //       imageUrl: meal.strMealThumb,
+  //       category: category,
+  //       price: Math.round(Number(meal.idMeal.slice(-2))) * 1000
+  //     })) : [];
+  //     this.mealsByCategory.set(meals);
+  //     console.log(meals);
+  //   });
+  // }
+  
+  loadMealsByCategory(category: string) {
+      this.http.get<MealsResponse>(`${environment.urlBase3}${category}`, {}).subscribe((response) => {
+      const meals = MealMapper.mapMealsToMealProducts(response.meals)
+            console.log(meals);
+            this.mealsByCategory.set(meals);
+      });
+    }
+
+
 }
+
 
 
 
