@@ -15,7 +15,7 @@ export class MealByNameServices {
   constructor(){}
 
   loadMealsByName(name: string) {
-    this.http.get<MealsResponse>(`${environment.urlBase3}${name}`, {}).subscribe((response) => {
+    this.http.get<MealsResponse>(`${environment.urlBaseByName}${name}`, {}).subscribe((response) => {
     const meals = MealOrDrinkMapper.mapMealsToMealProducts(response.meals)
           console.log(meals);
           this.searchedMeals.set(meals);

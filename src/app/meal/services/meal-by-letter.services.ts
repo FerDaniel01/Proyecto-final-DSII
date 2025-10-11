@@ -20,7 +20,7 @@ export class MealByLetterService {
 
   loadMealsByFirstLetter(firstLetter: string) {
     console.log('La letra es   ',firstLetter);
-    this.http.get<MealsResponse>(`${environment.urlBase2}${firstLetter}`, {}).subscribe((response) => {
+    this.http.get<MealsResponse>(`${environment.urlBasebyLetter}${firstLetter}`, {}).subscribe((response) => {
       const meals = MealOrDrinkMapper.mapMealsToMealProducts(response.meals)
       console.log(meals);
       this.searchedMeals.set(meals);
@@ -30,7 +30,7 @@ export class MealByLetterService {
     
     loadDRinksByFirstLetter(firstLetter: string) {
       console.log('La letra es   ',firstLetter);
-    this.http.get<DrinksResponse>(`${environment.urlBase4}${firstLetter}`, {}).subscribe((response) => {
+    this.http.get<DrinksResponse>(`${environment.urlBaseDrinkbyLetter}${firstLetter}`, {}).subscribe((response) => {
 
       console.log(response.drinks??[]);
       this.searchedDrinks.set(response.drinks??[]);

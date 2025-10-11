@@ -19,7 +19,7 @@ export class MealByCategoryService {
   // metodo para cargar las categorias
   loadCategories(category: string) {
     
-    this.http.get<CategoryResponse>(`${environment.urlBase5}${category}`, {}).subscribe((response) => {
+    this.http.get<CategoryResponse>(`${environment.urlBaseCategories}${category}`, {}).subscribe((response) => {
       const categoriesmeals = MealCategoryMapper.mapCategoryMealsToMealCategories(response.meals);
       this.categories.set(categoriesmeals);
 
@@ -48,7 +48,7 @@ export class MealByCategoryService {
 
   loadMealsByCategory(category: string) {
     console.log('Cargando platos para la categoría:', category);
-      this.http.get<MealsResponse>(`${environment.urlBase6}${category}`, {}).subscribe((response) => {
+      this.http.get<MealsResponse>(`${environment.urlBasebyCategory}${category}`, {}).subscribe((response) => {
       const meals = MealOrDrinkMapper.mapMealsToMealProducts(response.meals)
             console.log('platos por categorias',meals);
             this.mealsByCategory.set(meals);
