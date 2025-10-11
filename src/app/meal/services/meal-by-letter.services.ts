@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { MealsResponse,Meal, DrinksResponse, Drink, MealProduct  } from '../interfaces/interfaces';
 import { environment } from '@environments/environment';
-import { MealMapper } from '../mapper/meal.mapper';
+import { MealOrDrinkMapper } from '../mapper/meal.mapper';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class MealByLetterService {
   loadMealsByFirstLetter(firstLetter: string) {
     console.log('La letra es   ',firstLetter);
     this.http.get<MealsResponse>(`${environment.urlBase2}${firstLetter}`, {}).subscribe((response) => {
-      const meals = MealMapper.mapMealsToMealProducts(response.meals)
+      const meals = MealOrDrinkMapper.mapMealsToMealProducts(response.meals)
       console.log(meals);
       this.searchedMeals.set(meals);
     });

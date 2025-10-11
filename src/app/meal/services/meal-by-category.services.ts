@@ -1,6 +1,6 @@
 import { Injectable, inject, signal } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { MealCategoryMapper, MealMapper } from "../mapper/meal.mapper";
+import { MealCategoryMapper, MealOrDrinkMapper } from "../mapper/meal.mapper";
 import { Meal, CategoryMeal, CategoryResponse, MealCategory, MealProduct, MealsResponse } from "../interfaces/interfaces";
 import { environment } from "@environments/environment";
 
@@ -49,7 +49,7 @@ export class MealByCategoryService {
   loadMealsByCategory(category: string) {
     console.log('Cargando platos para la categoría:', category);
       this.http.get<MealsResponse>(`${environment.urlBase6}${category}`, {}).subscribe((response) => {
-      const meals = MealMapper.mapMealsToMealProducts(response.meals)
+      const meals = MealOrDrinkMapper.mapMealsToMealProducts(response.meals)
             console.log('platos por categorias',meals);
             this.mealsByCategory.set(meals);
             this.loadedCategory.set(category);

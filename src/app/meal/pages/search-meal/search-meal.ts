@@ -6,7 +6,7 @@ import { MealByLetterService } from '../../services/meal-by-letter.services';
 
 import {  MealList } from "../../components/meal-list/meal-list";
 import { MealByNameServices } from '../../services/meal-by-name.services';
-import { MealMapper } from '../../mapper/meal.mapper';
+
 
 @Component({
   selector: 'app-search-meal',

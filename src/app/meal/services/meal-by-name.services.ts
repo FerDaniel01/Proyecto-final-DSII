@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { Meal, MealProduct, MealsResponse } from '../interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
-import { MealMapper } from '../mapper/meal.mapper';
+import { MealOrDrinkMapper } from '../mapper/meal.mapper';
 import { environment } from '@environments/environment';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class MealByNameServices {
 
   loadMealsByName(name: string) {
     this.http.get<MealsResponse>(`${environment.urlBase3}${name}`, {}).subscribe((response) => {
-    const meals = MealMapper.mapMealsToMealProducts(response.meals)
+    const meals = MealOrDrinkMapper.mapMealsToMealProducts(response.meals)
           console.log(meals);
           this.searchedMeals.set(meals);
     });

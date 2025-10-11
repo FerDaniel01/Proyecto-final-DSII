@@ -1,10 +1,10 @@
 import { MealProduct, Meal, CategoryMeal, MealCategory } from "../interfaces/interfaces";
-//import { GiphyItem } from "../interfaces/giphy.interfaces";
 
-export class MealMapper {
+
+export class MealOrDrinkMapper {
     static mapMealToMealProduct(item: Meal): MealProduct{
         return{
-    id: item.idMeal,
+    id: item.idMeal ,
     name: item.strMeal,
     imageUrl: item.strMealThumb,
     category: item.strCategory,

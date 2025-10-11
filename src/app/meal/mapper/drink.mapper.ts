@@ -2,7 +2,7 @@
 import { MealProduct, Meal, Drink } from "../interfaces/interfaces";
 //import { GiphyItem } from "../interfaces/giphy.interfaces";
 
-export class MealMapper {
+export class MealOrDrinkMapper {
     static mapMealToMealProduct(item: Drink): MealProduct{
         return{
     id: item.idDrink,
